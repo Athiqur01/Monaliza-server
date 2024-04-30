@@ -44,6 +44,8 @@ async function run() {
         const item= await itemsCollection.findOne(quary) 
         res.send(item)
     })
+
+    app.put()
     
 
     app.post("/items", async (req,res)=>{
