@@ -64,8 +64,10 @@ async function run() {
           email:newItem.email,
           userName:newItem.userName
         }
+        
       }
-      const result=await itemsCollection.updateOne(filter)
+      const result=await itemsCollection.updateOne(filter,Item,options)
+      
 
     })
     
