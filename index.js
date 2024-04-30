@@ -47,6 +47,25 @@ async function run() {
 
     app.put('/item/:id', async(req,res)=>{
       const id=req.params.id;
+      const filter={_id:new ObjectId(id)};
+      const options={upsert:true};
+      const newItem=req.body;
+      const Item={
+        $set:{
+          itemName:newItem.itemName,
+          imageUrl:newItem.imageUrl,
+          subcatagory:newItem.subcatagory,
+          itemDescription:newItem.itemDescription,
+          price:newItem.price,
+          rating:newItem.rating,
+          customization:newItem.customization,
+          processingTime:newItem.processingTime,
+          stockStatus:newItem.stockStatus,
+          email:newItem.email,
+          userName:newItem.userName
+        }
+      }
+      const result=await itemsCollection.updateOne(filter)
 
     })
     
