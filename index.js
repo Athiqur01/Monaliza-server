@@ -45,7 +45,9 @@ async function run() {
         res.send(item)
     })
 
-    app.put()
+    app.put('/item/:id', async(req,res)=>{
+      
+    })
     
 
     app.post("/items", async (req,res)=>{
