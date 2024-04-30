@@ -67,6 +67,7 @@ async function run() {
         
       }
       const result=await itemsCollection.updateOne(filter,Item,options)
+      res.send(result)
       
 
     })
